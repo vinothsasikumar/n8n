@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    repo: https://github.com/vinothsasikumar/n8n
+    branch: master
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: "admin"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "admin123"
+      - key: N8N_HOST
+        value: "n8n.onrender.com"
+      - key: WEBHOOK_TUNNEL_URL
+        value: "https://n8n.onrender.com"
